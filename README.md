@@ -3,6 +3,70 @@
 >This project is a modern test automation framework using **Cucumber** (BDD) and **Playwright** with the **Page Object Model (POM)** in JavaScript. It enables scalable, maintainable, and readable frontend test automation for web applications.
 
 ---
+
+## 🏗️ Architecture Diagram
+
+```mermaid
+graph TB
+    subgraph "Test Execution Layer"
+        CucumberJS[Cucumber.js Runner]
+        Scripts[NPM Scripts]
+    end
+
+    subgraph "BDD Layer"
+        Features[Feature Files<br/>*.feature]
+        Steps[Step Definitions<br/>*.js]
+        Hooks[Hooks & Support<br/>hooks.js, world.js]
+    end
+
+    subgraph "Abstraction Layer"
+        POM[Page Object Model<br/>loginPage.js, basePage.js]
+        TestData[Test Data<br/>testData.json]
+    end
+
+    subgraph "Automation Engine"
+        Playwright[Playwright<br/>Browser Automation]
+        Browser[Web Browser<br/>Chrome, Firefox, Safari]
+    end
+
+    subgraph "Configuration & Reporting"
+        Config[Configuration<br/>cucumber.js]
+        Reporter[Custom Reporter<br/>reporter.js]
+        Reports[HTML/JSON Reports<br/>cucumber-report.html]
+    end
+
+    subgraph "Target Application"
+        WebApp[Web Application<br/>Under Test]
+    end
+
+    %% Connections
+    Scripts --> CucumberJS
+    CucumberJS --> Features
+    Features --> Steps
+    Steps --> POM
+    Steps --> Hooks
+    POM --> Playwright
+    Hooks --> Playwright
+    TestData --> Steps
+    Config --> CucumberJS
+    CucumberJS --> Reporter
+    Reporter --> Reports
+    Playwright --> Browser
+    Browser --> WebApp
+
+    %% Styling
+    classDef bdd fill:#e1f5fe
+    classDef automation fill:#f3e5f5
+    classDef config fill:#fff3e0
+    classDef target fill:#e8f5e8
+
+    class Features,Steps,Hooks bdd
+    class POM,Playwright,Browser automation
+    class Config,Reporter,Reports config
+    class WebApp target
+```
+
+---
 ## 📦 Project Structure
 
 - `features/` — Cucumber feature files and step definitions
