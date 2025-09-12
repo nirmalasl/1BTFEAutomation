@@ -1,0 +1,157 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality-for-sauce-demo;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 323112100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I navigate to Sauce Demo website",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1445352300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter username \"standard_user\"",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47321000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I enter password \"secret_sauce\"",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19787600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 211061700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23730399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click on burger menu",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 166585900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I click on logout link",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 984879199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should be logged out successfully",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18321899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I close the browser",
+            "match": {
+              "location": "features\\step_definitions\\steps.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 399996700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 58027500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality-for-sauce-demo",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Functionality for Sauce Demo",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]

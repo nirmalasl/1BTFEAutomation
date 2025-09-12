@@ -1,0 +1,17 @@
+cucumber-pom-project
+├── features
+│   ├── step_definitions
+│   │   └── steps.js
+│   ├── support
+│   │   ├── hooks.js
+│   │   └── world.js
+│   └── example.feature
+├── page_objects
+│   └── basePage.js
+├── test_data
+│   └── testData.json
+├── config
+│   └── cucumber.js
+├── package.json
+├── .gitignore
+└── README.md
