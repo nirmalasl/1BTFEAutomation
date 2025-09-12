@@ -1,4 +1,4 @@
-# 1BT Playwright Cucumber Automation Framework
+# 1BT Playwright BDD Automation Framework
 
 >This project is a modern test automation framework using **Cucumber** (BDD) and **Playwright** with the **Page Object Model (POM)** in JavaScript. It enables scalable, maintainable, and readable frontend test automation for web applications.
 
