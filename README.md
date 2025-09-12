@@ -1,4 +1,4 @@
-# 1BT Playwright Cucumber Automation Framework
+# 1BT Playwright BDD Automation Framework
 
 >This project is a modern test automation framework using **Cucumber** (BDD) and **Playwright** with the **Page Object Model (POM)** in JavaScript. It enables scalable, maintainable, and readable frontend test automation for web applications.
 
@@ -131,6 +131,5 @@ Pull requests and issues are welcome! Please follow project conventions and keep
 
 ---
 
-For more details, see `.github/copilot-instructions.md` or contact a maintainer.
-# 1BTFEAutomation
+
 
