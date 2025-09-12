@@ -67,6 +67,5 @@ Pull requests and issues are welcome! Please follow project conventions and keep
 
 ---
 
-For more details, see `.github/copilot-instructions.md` or contact a maintainer.
-# 1BTFEAutomation
+
 
