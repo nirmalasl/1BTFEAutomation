@@ -1,4 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const { expect } = require('@playwright/test');
 const LoginPage = require('../../page_objects/loginPage');
 const fs = require('fs');
 const path = require('path');
@@ -65,4 +66,20 @@ When('I click on logout link', async function () {
 
 Then('I should be logged out successfully', async function () {
     await this.loginPage.isLoggedOut();
+});
+
+// Browser management steps
+When('I close the browser', async function () {
+    if (this.page && !this.page.isClosed()) {
+        await this.page.close();
+    }
+    if (this.browser) {
+        await this.browser.close();
+    }
+});
+
+Then('the browser should be closed', async function () {
+    if (this.page) {
+        expect(this.page.isClosed()).toBeTruthy();
+    }
 });

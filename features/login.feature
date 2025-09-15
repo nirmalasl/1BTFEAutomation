@@ -9,6 +9,8 @@ Feature: Login Functionality for Sauce Demo
     When I click on burger menu
     And I click on logout link
     Then I should be logged out successfully
+    When I close the browser
+    Then the browser should be closed
 
     Examples:
       | userType    |
