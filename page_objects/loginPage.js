@@ -1,8 +1,8 @@
 const BasePage = require('./basePage');
 
 class LoginPage extends BasePage {
-    constructor() {
-        super();
+    constructor(page) {
+        super(page);
         this.usernameInput = '#user-name';
         this.passwordInput = '#password';
         this.loginButton = '#login-button';

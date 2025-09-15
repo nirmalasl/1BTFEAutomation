@@ -8,7 +8,7 @@ const testDataPath = path.join(__dirname, '../../test_data/testData.json');
 const testData = JSON.parse(fs.readFileSync(testDataPath, 'utf8'));
 
 Given('I navigate to Sauce Demo website', async function () {
-    this.loginPage = new LoginPage();
+    this.loginPage = new LoginPage(this.page);
     await this.loginPage.navigate(testData.urls.sauceDemo);
 });
 
@@ -65,8 +65,4 @@ When('I click on logout link', async function () {
 
 Then('I should be logged out successfully', async function () {
     await this.loginPage.isLoggedOut();
-});
-
-Then('I close the browser', async function () {
-    await this.loginPage.closeBrowser();
 });

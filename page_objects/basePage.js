@@ -1,16 +1,9 @@
-const { chromium } = require('playwright');  // Change from @playwright/test to playwright
-
 class BasePage {
-    constructor() {
-        this.browser = null;
-        this.page = null;
+    constructor(page) {
+        this.page = page;
     }
 
     async navigate(url) {
-        if (!this.browser) {
-            this.browser = await chromium.launch({ headless: false });
-            this.page = await this.browser.newPage();
-        }
         await this.page.goto(url);
     }
 
@@ -24,14 +17,6 @@ class BasePage {
 
     async waitForElement(selector) {
         await this.page.locator(selector).waitFor({ state: 'visible' });
-    }
-
-    async closeBrowser() {
-        if (this.browser) {
-            await this.browser.close();
-            this.browser = null;
-            this.page = null;
-        }
     }
 }
 

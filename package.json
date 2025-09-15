@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Cucumber Playwright Test Automation",
   "scripts": {
-    "test": "cucumber-js && node config/reporter.js",
-    "test:login": "cucumber-js features/login.feature --require features/step_definitions/*.js --require features/support/*.js --format json:cucumber-report.json && node config/reporter.js",
+    "test": "cucumber-js --config config/cucumber.js && node config/reporter.js",
+    "test:login": "cucumber-js features/login.feature --config config/cucumber.js && node config/reporter.js",
     "report": "node config/reporter.js",
-    "test:report": "cucumber-js --format html:reports/cucumber-report.html && start reports/cucumber-report.html"
+    "test:report": "cucumber-js --config config/cucumber.js && start reports/cucumber-report.html"
   },
   "dependencies": {
     "@cucumber/cucumber": "^9.6.0",
