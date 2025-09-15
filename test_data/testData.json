@@ -1,17 +1,33 @@
-cucumber-pom-project
-├── features
-│   ├── step_definitions
-│   │   └── steps.js
-│   ├── support
-│   │   ├── hooks.js
-│   │   └── world.js
-│   └── example.feature
-├── page_objects
-│   └── basePage.js
-├── test_data
-│   └── testData.json
-├── config
-│   └── cucumber.js
-├── package.json
-├── .gitignore
-└── README.md
+{
+  "loginCredentials": {
+    "validUser": {
+      "username": "standard_user",
+      "password": "secret_sauce"
+    },
+    "invalidUser": {
+      "username": "invalid_user",
+      "password": "invalid_password"
+    },
+    "lockedUser": {
+      "username": "locked_out_user", 
+      "password": "secret_sauce"
+    }
+  },
+  "urls": {
+    "sauceDemo": "https://www.saucedemo.com/v1/index.html"
+  },
+  "testScenarios": {
+    "successfulLogin": {
+      "description": "Login with valid credentials",
+      "username": "standard_user",
+      "password": "secret_sauce",
+      "expectedResult": "success"
+    },
+    "invalidLogin": {
+      "description": "Login with invalid credentials", 
+      "username": "invalid_user",
+      "password": "invalid_password",
+      "expectedResult": "failure"
+    }
+  }
+}
