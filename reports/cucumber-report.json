@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "login-functionality-for-sauce-demo;successful-login-with-valid-credentials",
-        "keyword": "Scenario",
-        "line": 3,
-        "name": "Successful login with valid credentials",
+        "id": "login-functionality-for-sauce-demo;login-with-different-credentials",
+        "keyword": "Scenario Outline",
+        "line": 15,
+        "name": "Login with different credentials",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 323112100
+              "duration": 343269499
             }
           },
           {
@@ -23,37 +23,37 @@
             "line": 4,
             "name": "I navigate to Sauce Demo website",
             "match": {
-              "location": "features\\step_definitions\\steps.js:4"
+              "location": "features\\step_definitions\\LoginSteps.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 1445352300
+              "duration": 1463241700
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 5,
-            "name": "I enter username \"standard_user\"",
+            "name": "I enter username from test data \"validUser\"",
             "match": {
-              "location": "features\\step_definitions\\steps.js:9"
+              "location": "features\\step_definitions\\LoginSteps.js:23"
             },
             "result": {
               "status": "passed",
-              "duration": 47321000
+              "duration": 50576000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 6,
-            "name": "I enter password \"secret_sauce\"",
+            "name": "I enter password from test data \"validUser\"",
             "match": {
-              "location": "features\\step_definitions\\steps.js:13"
+              "location": "features\\step_definitions\\LoginSteps.js:28"
             },
             "result": {
               "status": "passed",
-              "duration": 19787600
+              "duration": 19057800
             }
           },
           {
@@ -62,24 +62,24 @@
             "line": 7,
             "name": "I click on the login button",
             "match": {
-              "location": "features\\step_definitions\\steps.js:17"
+              "location": "features\\step_definitions\\LoginSteps.js:39"
             },
             "result": {
               "status": "passed",
-              "duration": 211061700
+              "duration": 456408600
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 8,
-            "name": "I should be logged in successfully",
+            "name": "I should see the expected result for \"validUser\"",
             "match": {
-              "location": "features\\step_definitions\\steps.js:21"
+              "location": "features\\step_definitions\\LoginSteps.js:47"
             },
             "result": {
               "status": "passed",
-              "duration": 23730399
+              "duration": 26403400
             }
           },
           {
@@ -88,11 +88,11 @@
             "line": 9,
             "name": "I click on burger menu",
             "match": {
-              "location": "features\\step_definitions\\steps.js:25"
+              "location": "features\\step_definitions\\LoginSteps.js:58"
             },
             "result": {
               "status": "passed",
-              "duration": 166585900
+              "duration": 166870900
             }
           },
           {
@@ -101,11 +101,11 @@
             "line": 10,
             "name": "I click on logout link",
             "match": {
-              "location": "features\\step_definitions\\steps.js:29"
+              "location": "features\\step_definitions\\LoginSteps.js:62"
             },
             "result": {
               "status": "passed",
-              "duration": 984879199
+              "duration": 989143399
             }
           },
           {
@@ -114,24 +114,11 @@
             "line": 11,
             "name": "I should be logged out successfully",
             "match": {
-              "location": "features\\step_definitions\\steps.js:33"
+              "location": "features\\step_definitions\\LoginSteps.js:66"
             },
             "result": {
               "status": "passed",
-              "duration": 18321899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "I close the browser",
-            "match": {
-              "location": "features\\step_definitions\\steps.js:37"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 399996700
+              "duration": 22098500
             }
           },
           {
@@ -139,7 +126,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 58027500
+              "duration": 84942000
             }
           }
         ],
