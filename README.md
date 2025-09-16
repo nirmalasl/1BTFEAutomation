@@ -74,8 +74,11 @@ graph TB
 	- `support/` — Hooks and custom world logic
 - `page_objects/` — Page Object Model classes for UI abstraction (e.g., `loginPage.js`)
 - `test_data/` — Scenario data in JSON format
-- `config/` — Cucumber and reporting configuration
+- `config/` — Cucumber, reporting, and logging configuration
 - `reports/` — Generated test reports (HTML, JSON)
+- `logs/` — Application and test execution logs (auto-rotating)
+- `utils/` — Utility classes and helpers (Logger, etc.)
+- `docs/` — Documentation and guides
 - `package.json` — Project dependencies and scripts
 
 ## 🚀 Getting Started
@@ -112,6 +115,11 @@ graph TB
 - **Reporting:**
 	- Custom reporting configured in `config/reporter.js`.
 	- Reports output to `reports/cucumber-report.html`.
+- **Logging:**
+	- Comprehensive logging with Winston in `config/logger.js`.
+	- Structured logs for tests, page actions, and system events.
+	- Daily rotating logs in `logs/` directory.
+	- See `docs/Logging_Guide.md` for detailed usage.
 
 ## ⚙️ Customization & Advanced Usage
 
@@ -124,6 +132,32 @@ graph TB
 - `npm install` — Install dependencies
 - `npx cucumber-js` — Run all tests
 - `npm run test:report` — Run tests and generate HTML report
+- `npm run test:login` — Run login feature tests only
+- `npm run view-report` — Open the latest HTML report
+- `npm run clean-screenshots` — Clean screenshot directory
+
+## 📊 Features
+
+### ✅ Comprehensive Logging
+- **Multi-level logging** (DEBUG, INFO, WARN, ERROR)
+- **Daily rotating log files** with automatic archival
+- **Structured logging** for better analysis and debugging
+- **Performance tracking** and metrics
+- **Test execution tracing** with detailed step logging
+- **Error tracking** with stack traces and context
+
+### ✅ Advanced Reporting
+- **HTML reports** with test results and screenshots
+- **JSON reports** for CI/CD integration
+- **Screenshot capture** on test failures
+- **Custom reporting** with configurable options
+
+### ✅ Robust Test Architecture
+- **Page Object Model** for maintainable UI interactions
+- **BDD approach** with Cucumber and Gherkin syntax
+- **Data-driven testing** with JSON test data
+- **Cross-browser testing** capability with Playwright
+- **Hooks and fixtures** for setup/teardown operations
 
 ## 🤝 Contributing
 
