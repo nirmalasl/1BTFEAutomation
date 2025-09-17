@@ -10,60 +10,121 @@
 graph TB
     subgraph "Test Execution Layer"
         CucumberJS[Cucumber.js Runner]
-        Scripts[NPM Scripts]
+        Scripts[NPM Scripts<br/>test, test:login, test:checkout]
+        Logger[Winston Logger<br/>Multi-level logging]
     end
 
     subgraph "BDD Layer"
-        Features[Feature Files<br/>*.feature]
-        Steps[Step Definitions<br/>*.js]
+        LoginFeature[sauceDemoLogin.feature<br/>Authentication Tests]
+        CheckoutFeature[sauceDemoCheckout.feature<br/>E-commerce Tests]
+        LoginSteps[sauceDemoSteps.js<br/>Login Step Definitions]
+        CheckoutSteps[sauceDemoCheckoutSteps.js<br/>Checkout Step Definitions]
         Hooks[Hooks & Support<br/>hooks.js, world.js]
     end
 
-    subgraph "Abstraction Layer"
-        POM[Page Object Model<br/>loginPage.js, basePage.js]
-        TestData[Test Data<br/>testData.json]
+    subgraph "Page Object Model Layer"
+        BasePage[BasePage.js<br/>Common Functionality]
+        LoginPage[sauceDemoLoginPage.js<br/>Login Actions]
+        InventoryPage[sauceDemoInventoryPage.js<br/>Product & Cart Management]
+        CartPage[sauceDemoCartPage.js<br/>Cart Operations]
+        CheckoutPage[sauceDemoCheckoutPage.js<br/>Checkout Form]
+        OverviewPage[sauceDemoCheckoutOverviewPage.js<br/>Order Review]
+        CompletePage[sauceDemoCheckoutCompletePage.js<br/>Order Confirmation]
+    end
+
+    subgraph "Data & Configuration Layer"
+        TestData[testData.json<br/>Users, Products, Checkout Info]
+        Config[cucumber.js<br/>Test Configuration]
+        LoggerConfig[logger.js<br/>Logging Configuration]
     end
 
     subgraph "Automation Engine"
-        Playwright[Playwright<br/>Browser Automation]
-        Browser[Web Browser<br/>Chrome, Firefox, Safari]
+        Playwright[Playwright<br/>Browser Automation Engine]
+        Browser[Web Browser<br/>Chrome, Firefox, Safari, Edge]
     end
 
-    subgraph "Configuration & Reporting"
-        Config[Configuration<br/>cucumber.js]
-        Reporter[Custom Reporter<br/>reporter.js]
-        Reports[HTML/JSON Reports<br/>cucumber-report.html]
+    subgraph "Reporting & Logging"
+        Reporter[reporter.js<br/>Custom HTML Reporter]
+        HTMLReport[cucumber-report.html<br/>Interactive Test Report]
+        JSONReport[cucumber-report.json<br/>Machine Readable Report]
+        LogFiles[Daily Rotating Logs<br/>application.log, error.log, etc.]
+        Screenshots[Screenshots<br/>Failure Evidence]
     end
 
     subgraph "Target Application"
-        WebApp[Web Application<br/>Under Test]
+        SauceDemo[Sauce Demo Website<br/>E-commerce Test Application]
+        LoginFlow[Authentication Flow]
+        ShoppingFlow[Shopping & Checkout Flow]
     end
 
-    %% Connections
+    %% Test Execution Connections
     Scripts --> CucumberJS
-    CucumberJS --> Features
-    Features --> Steps
-    Steps --> POM
-    Steps --> Hooks
-    POM --> Playwright
-    Hooks --> Playwright
-    TestData --> Steps
+    Scripts --> Logger
+    CucumberJS --> LoginFeature
+    CucumberJS --> CheckoutFeature
+    
+    %% BDD Layer Connections
+    LoginFeature --> LoginSteps
+    CheckoutFeature --> CheckoutSteps
+    LoginSteps --> Hooks
+    CheckoutSteps --> Hooks
+    
+    %% Page Object Connections
+    LoginSteps --> BasePage
+    LoginSteps --> LoginPage
+    LoginSteps --> InventoryPage
+    CheckoutSteps --> BasePage
+    CheckoutSteps --> InventoryPage
+    CheckoutSteps --> CartPage
+    CheckoutSteps --> CheckoutPage
+    CheckoutSteps --> OverviewPage
+    CheckoutSteps --> CompletePage
+    
+    %% Data Flow
+    TestData --> LoginSteps
+    TestData --> CheckoutSteps
     Config --> CucumberJS
-    CucumberJS --> Reporter
-    Reporter --> Reports
+    LoggerConfig --> Logger
+    
+    %% Automation Engine Connections
+    BasePage --> Playwright
+    LoginPage --> Playwright
+    InventoryPage --> Playwright
+    CartPage --> Playwright
+    CheckoutPage --> Playwright
+    OverviewPage --> Playwright
+    CompletePage --> Playwright
+    Hooks --> Playwright
     Playwright --> Browser
-    Browser --> WebApp
-
+    
+    %% Application Connections
+    Browser --> SauceDemo
+    Browser --> LoginFlow
+    Browser --> ShoppingFlow
+    
+    %% Reporting Connections
+    CucumberJS --> Reporter
+    CucumberJS --> JSONReport
+    Reporter --> HTMLReport
+    Logger --> LogFiles
+    Playwright --> Screenshots
+    
     %% Styling
-    classDef bdd fill:#e1f5fe
-    classDef automation fill:#f3e5f5
-    classDef config fill:#fff3e0
-    classDef target fill:#e8f5e8
+    classDef execution fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef bdd fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    classDef pom fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef data fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef automation fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef reporting fill:#e0f2f1,stroke:#00796b,stroke-width:2px
+    classDef target fill:#fff8e1,stroke:#f9a825,stroke-width:2px
 
-    class Features,Steps,Hooks bdd
-    class POM,Playwright,Browser automation
-    class Config,Reporter,Reports config
-    class WebApp target
+    class CucumberJS,Scripts,Logger execution
+    class LoginFeature,CheckoutFeature,LoginSteps,CheckoutSteps,Hooks bdd
+    class BasePage,LoginPage,InventoryPage,CartPage,CheckoutPage,OverviewPage,CompletePage pom
+    class TestData,Config,LoggerConfig data
+    class Playwright,Browser automation
+    class Reporter,HTMLReport,JSONReport,LogFiles,Screenshots reporting
+    class SauceDemo,LoginFlow,ShoppingFlow target
 ```
 
 ---
