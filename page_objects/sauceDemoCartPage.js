@@ -37,8 +37,8 @@ class SauceDemoCartPage extends BasePage {
   }
 
   async clickCartIcon() {
-    await this.page.click(this.cartIcon);
-    await this.page.waitForSelector(this.cartContainer);
+    await this.click(this.cartIcon);
+    await this.waitForElement(this.cartContainer);
   }
 
   async getCartItems() {
@@ -71,11 +71,11 @@ class SauceDemoCartPage extends BasePage {
   }
 
   async clickContinueShopping() {
-    await this.page.click(this.continueShoppingButton);
+    await this.click(this.continueShoppingButton);
   }
 
   async clickCheckout() {
-    await this.page.click(this.checkoutButton);
+    await this.click(this.checkoutButton);
   }
 
   async removeProductFromCart(productName) {
@@ -91,11 +91,11 @@ class SauceDemoCartPage extends BasePage {
   }
 
   async getPageTitle() {
-    return await this.page.textContent(this.pageTitle);
+    return await this.getText(this.pageTitle);
   }
 
   async waitForCartPage() {
-    await this.page.waitForSelector(this.cartContainer);
+    await this.waitForElement(this.cartContainer);
   }
 }
 

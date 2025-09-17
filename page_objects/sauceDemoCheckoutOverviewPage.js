@@ -18,15 +18,15 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
   }
 
   async clickFinish() {
-    await this.page.click(this.finishButton);
+    await this.click(this.finishButton);
   }
 
   async clickCancel() {
-    await this.page.click(this.cancelButton);
+    await this.click(this.cancelButton);
   }
 
   async getPageTitle() {
-    return await this.page.textContent(this.pageTitle);
+    return await this.getText(this.pageTitle);
   }
 
   async getOrderItems() {
@@ -55,7 +55,7 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
 
   async getSubtotal() {
     try {
-      const subtotalText = await this.page.textContent(this.summarySubtotal);
+      const subtotalText = await this.getText(this.summarySubtotal);
       return subtotalText?.replace('Item total: ', '').trim();
     } catch (error) {
       return null;
@@ -64,7 +64,7 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
 
   async getTax() {
     try {
-      const taxText = await this.page.textContent(this.summaryTax);
+      const taxText = await this.getText(this.summaryTax);
       return taxText?.replace('Tax: ', '').trim();
     } catch (error) {
       return null;
@@ -73,7 +73,7 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
 
   async getTotal() {
     try {
-      const totalText = await this.page.textContent(this.summaryTotal);
+      const totalText = await this.getText(this.summaryTotal);
       return totalText?.replace('Total: ', '').trim();
     } catch (error) {
       return null;
@@ -81,12 +81,12 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
   }
 
   async waitForOverviewPage() {
-    await this.page.waitForSelector(this.checkoutSummaryContainer);
+    await this.waitForElement(this.checkoutSummaryContainer);
   }
 
   async isOnOverviewPage() {
     try {
-      await this.page.waitForSelector(this.checkoutSummaryContainer, { timeout: 3000 });
+      await this.waitForElement(this.checkoutSummaryContainer, { timeout: 3000 });
       return true;
     } catch (error) {
       return false;

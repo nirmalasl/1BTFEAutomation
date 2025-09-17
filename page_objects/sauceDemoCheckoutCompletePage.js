@@ -12,16 +12,16 @@ class SauceDemoCheckoutCompletePage extends BasePage {
   }
 
   async clickBackHome() {
-    await this.page.click(this.backHomeButton);
+    await this.click(this.backHomeButton);
   }
 
   async getPageTitle() {
-    return await this.page.textContent(this.pageTitle);
+    return await this.getText(this.pageTitle);
   }
 
   async getCompleteHeader() {
     try {
-      return await this.page.textContent(this.completeHeader);
+      return await this.getText(this.completeHeader);
     } catch (error) {
       return null;
     }
@@ -29,7 +29,7 @@ class SauceDemoCheckoutCompletePage extends BasePage {
 
   async getCompleteText() {
     try {
-      return await this.page.textContent(this.completeText);
+      return await this.getText(this.completeText);
     } catch (error) {
       return null;
     }
@@ -45,12 +45,12 @@ class SauceDemoCheckoutCompletePage extends BasePage {
   }
 
   async waitForCompletePage() {
-    await this.page.waitForSelector(this.checkoutCompleteContainer);
+    await this.waitForElement(this.checkoutCompleteContainer);
   }
 
   async isOnCompletePage() {
     try {
-      await this.page.waitForSelector(this.checkoutCompleteContainer, { timeout: 3000 });
+      await this.waitForElement(this.checkoutCompleteContainer, { timeout: 3000 });
       return true;
     } catch (error) {
       return false;
@@ -59,7 +59,7 @@ class SauceDemoCheckoutCompletePage extends BasePage {
 
   async isPonyExpressImageVisible() {
     try {
-      return await this.page.isVisible(this.ponyExpressImage);
+      return await this.isVisible(this.ponyExpressImage);
     } catch (error) {
       return false;
     }

@@ -14,15 +14,15 @@ class SauceDemoCheckoutPage extends BasePage {
   }
 
   async enterFirstName(firstName) {
-    await this.page.fill(this.firstNameInput, firstName);
+    await this.fill(this.firstNameInput, firstName);
   }
 
   async enterLastName(lastName) {
-    await this.page.fill(this.lastNameInput, lastName);
+    await this.fill(this.lastNameInput, lastName);
   }
 
   async enterPostalCode(postalCode) {
-    await this.page.fill(this.postalCodeInput, postalCode);
+    await this.fill(this.postalCodeInput, postalCode);
   }
 
   async enterCheckoutInformation(firstName, lastName, postalCode) {
@@ -32,32 +32,32 @@ class SauceDemoCheckoutPage extends BasePage {
   }
 
   async clickContinue() {
-    await this.page.click(this.continueButton);
+    await this.click(this.continueButton);
   }
 
   async clickCancel() {
-    await this.page.click(this.cancelButton);
+    await this.click(this.cancelButton);
   }
 
   async getErrorMessage() {
     try {
-      return await this.page.textContent(this.errorMessage);
+      return await this.getText(this.errorMessage);
     } catch (error) {
       return null;
     }
   }
 
   async getPageTitle() {
-    return await this.page.textContent(this.pageTitle);
+    return await this.getText(this.pageTitle);
   }
 
   async waitForCheckoutPage() {
-    await this.page.waitForSelector(this.checkoutContainer);
+    await this.waitForElement(this.checkoutContainer);
   }
 
   async isOnCheckoutPage() {
     try {
-      await this.page.waitForSelector(this.checkoutContainer, { timeout: 3000 });
+      await this.waitForElement(this.checkoutContainer, { timeout: 3000 });
       return true;
     } catch (error) {
       return false;

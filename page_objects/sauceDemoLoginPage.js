@@ -1,31 +1,43 @@
-class SauceDemoLoginPage {
+const BasePage = require('./basePage');
+
+class SauceDemoLoginPage extends BasePage {
   constructor(page) {
-    this.page = page;
-    this.usernameInput = '[data-test="username"]';
-    this.passwordInput = '[data-test="password"]';
-    this.loginButton = '[data-test="login-button"]';
-    this.errorMessage = '[data-test="error"]';
+    super(page);
+    this.selectors = {
+      usernameInput: '[data-test="username"]',
+      passwordInput: '[data-test="password"]',
+      loginButton: '[data-test="login-button"]',
+      errorMessage: '[data-test="error"]'
+    };
     this.url = 'https://www.saucedemo.com/';
   }
 
   async navigate() {
-    await this.page.goto(this.url);
+    await super.navigate(this.url);
   }
 
   async enterUsername(username) {
-    await this.page.fill(this.usernameInput, username);
+    await this.fill(this.selectors.usernameInput, username);
   }
 
   async enterPassword(password) {
-    await this.page.fill(this.passwordInput, password);
+    await this.fill(this.selectors.passwordInput, password);
   }
 
   async clickLoginButton() {
-    await this.page.click(this.loginButton);
+    await this.click(this.selectors.loginButton);
   }
 
   async getErrorMessage() {
-    return await this.page.textContent(this.errorMessage);
+    return await this.getText(this.selectors.errorMessage);
+  }
+
+  async isErrorMessageVisible() {
+    return await this.isVisible(this.selectors.errorMessage);
+  }
+
+  async waitForLoginButton() {
+    await this.waitForElement(this.selectors.loginButton);
   }
 }
 

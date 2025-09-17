@@ -14,11 +14,11 @@ class SauceDemoInventoryPage extends BasePage {
   }
 
   async waitForPageLoad() {
-    await this.page.waitForSelector(this.inventoryContainer);
+    await this.waitForElement(this.inventoryContainer);
   }
 
   async getPageTitle() {
-    return await this.page.textContent(this.pageTitle);
+    return await this.getText(this.pageTitle);
   }
 
   async addProductToCart(productName) {
@@ -91,7 +91,7 @@ class SauceDemoInventoryPage extends BasePage {
   }
 
   async clickCartIcon() {
-    await this.page.click(this.cartIcon);
+    await this.click(this.cartIcon);
   }
 
   async getAllProducts() {
