@@ -5,7 +5,8 @@ module.exports = {
             snippetInterface: "async-await"
         },
         paths: [
-            "features/*.feature"
+            "features/sauceDemoLogin.feature",
+            "features/sauceDemoAddProduct.feature"
         ],
         require: [
             "features/step_definitions/*.js",
@@ -16,6 +17,7 @@ module.exports = {
             ["html", "reports/cucumber-report.html"],
             ["json", "reports/cucumber-report.json"]
         ],
+        order: "defined"
         
     }
 };
