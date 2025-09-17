@@ -70,10 +70,22 @@ graph TB
 ## 📦 Project Structure
 
 - `features/` — Cucumber feature files and step definitions
+	- `sauceDemoLogin.feature` — Authentication testing scenarios
+	- `sauceDemoCheckout.feature` — E-commerce checkout testing scenarios
 	- `step_definitions/` — Step implementations (JavaScript)
+		- `sauceDemoSteps.js` — Login and authentication steps
+		- `sauceDemoCheckoutSteps.js` — Checkout and cart management steps
 	- `support/` — Hooks and custom world logic
-- `page_objects/` — Page Object Model classes for UI abstraction (e.g., `loginPage.js`)
+- `page_objects/` — Page Object Model classes for UI abstraction
+	- `basePage.js` — Base page with common functionality
+	- `sauceDemoLoginPage.js` — Login page interactions
+	- `sauceDemoInventoryPage.js` — Product inventory and cart management
+	- `sauceDemoCartPage.js` — Shopping cart operations
+	- `sauceDemoCheckoutPage.js` — Checkout information form
+	- `sauceDemoCheckoutOverviewPage.js` — Order review and summary
+	- `sauceDemoCheckoutCompletePage.js` — Order completion confirmation
 - `test_data/` — Scenario data in JSON format
+	- `testData.json` — User credentials, product data, and checkout information
 - `config/` — Cucumber, reporting, and logging configuration
 - `reports/` — Generated test reports (HTML, JSON)
 - `logs/` — Application and test execution logs (auto-rotating)
@@ -91,7 +103,18 @@ graph TB
 	 ```bash
 	 npx cucumber-js
 	 ```
-3. **Generate HTML report:**
+3. **Run specific feature tests:**
+	 ```bash
+	 # Login tests only
+	 npx cucumber-js features/sauceDemoLogin.feature
+	 
+	 # Checkout tests only
+	 npx cucumber-js features/sauceDemoCheckout.feature
+	 
+	 # Run specific scenario
+	 npx cucumber-js --name="Complete full checkout process"
+	 ```
+4. **Generate HTML report:**
 	 ```bash
 	 npm run test:report
 	 # View the report at reports/cucumber-report.html
@@ -102,13 +125,14 @@ graph TB
 - **Page Objects:**
 	- Each UI page/component has a class in `page_objects/`.
 	- All selectors and UI logic are encapsulated in these classes.
-	- Example: `loginPage.js` exposes methods for login actions.
+	- Example: `sauceDemoLoginPage.js` exposes methods for login actions, `sauceDemoCartPage.js` handles cart operations.
 - **Step Definitions:**
 	- Organized by feature in `features/step_definitions/`.
 	- Use async/await for all steps.
-	- Reuse steps where possible.
+	- Reuse steps where possible across different features.
 - **Test Data:**
 	- Use `test_data/testData.json` for scenario-specific data.
+	- Includes user credentials, product information, and checkout data.
 	- Do **not** store credentials or secrets in the repo.
 - **Hooks:**
 	- Common setup/teardown logic in `features/support/hooks.js`.
@@ -133,8 +157,38 @@ graph TB
 - `npx cucumber-js` — Run all tests
 - `npm run test:report` — Run tests and generate HTML report
 - `npm run test:login` — Run login feature tests only
+- `npm run test:checkout` — Run checkout feature tests only
 - `npm run view-report` — Open the latest HTML report
 - `npm run clean-screenshots` — Clean screenshot directory
+
+## 🧪 Test Features
+
+This framework includes comprehensive test coverage for the Sauce Demo application:
+
+### 🔐 Authentication Testing (`sauceDemoLogin.feature`)
+- **Successful login** with valid credentials
+- **Failed login** scenarios (invalid credentials, locked users)
+- **Error message validation** for authentication failures
+
+### 🛒 E-commerce Checkout Testing (`sauceDemoCheckout.feature`)
+- **Cart Management:**
+  - Add single/multiple products to cart
+  - Remove products from cart
+  - Cart badge validation and visibility
+  - View cart details and navigate between pages
+- **Checkout Process:**
+  - Complete end-to-end checkout workflow
+  - Checkout information validation (required fields)
+  - Order review and confirmation
+  - Success page validation
+- **Navigation Flow:**
+  - Continue shopping from cart
+  - Cancel checkout at different stages
+- **Data-Driven Testing:**
+  - Scenario outlines for testing multiple product types
+  - Comprehensive product catalog coverage
+
+**Total Coverage:** 19+ scenarios, 112+ test steps
 
 ## 📊 Features
 
@@ -162,6 +216,17 @@ graph TB
 ## 🤝 Contributing
 
 Pull requests and issues are welcome! Please follow project conventions and keep tests maintainable.
+
+## 📝 Recent Updates
+
+### v1.1.0 - September 2025
+- ✅ **Added comprehensive checkout testing** with `sauceDemoCheckout.feature`
+- ✅ **16 new test scenarios** covering complete e-commerce workflow
+- ✅ **4 new page objects** for cart, checkout, and order management
+- ✅ **Enhanced inventory page** with cart functionality
+- ✅ **Updated test data** with product catalog and checkout information
+- ✅ **Added npm script** for running checkout tests independently (`npm run test:checkout`)
+- ✅ **Expanded documentation** with detailed feature coverage
 
 ---
 

@@ -17,6 +17,26 @@
     "invalidUser": {
       "username": "invalid_user",
       "password": "wrong_password"
+    },
+    "products": [
+      "Sauce Labs Backpack",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Bolt T-Shirt",
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Onesie",
+      "Test.allTheThings() T-Shirt (Red)"
+    ],
+    "checkoutInformation": {
+      "valid": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "postalCode": "12345"
+      },
+      "alternative": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "postalCode": "54321"
+      }
     }
   }
 }
