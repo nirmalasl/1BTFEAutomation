@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Cucumber Feature Report</title>
-  <link rel="icon" href="https://www.lambdatest.com/favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <style type="text/css">
-    .panel-heading {
+  <head>
+    <title>Cucumber Feature Report</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
+    <style type="text/css">
+      .panel-heading {
     padding: 0;
 }
 
@@ -261,10 +259,6 @@ pre {
     color: #616161;
 }
 
-.stepname {
-    word-wrap: break-word;
-}
-
 .feature-passed {
     display: block;
 }
@@ -289,269 +283,138 @@ pre {
     min-width: 100%;
 }
 
-.ellipsis {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: all .2s linear;
-    white-space: nowrap;
-    padding:.5rem 1rem;
-}
-.ellipsis:focus, .ellipsis:hover {
-  color:transparent;
-}
-.ellipsis:focus:after,.ellipsis:hover:after{
-    content:attr(data-text);
-    overflow: visible;
-    text-overflow: inherit;
-    background: #fff;
-    position: absolute;
-    left:auto;
-    top:auto;
-    width: auto;
-    max-width: 100%;
-    border: 1px solid #eaebec;
-    padding: 0 .5rem;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.28);
-    white-space: normal;
-    word-wrap: break-word;
-    display:block;
-    color:black;
-    margin-top:-1.25rem;
-    z-index: 1;
-  }
+    </style>
+    <meta charset="UTF-8">
+  </head>
+  <body>
 
-    /** Issue in google-charts tooltip - https://github.com/google/google-visualization-issues/issues/2162 */
-    .google-visualization-tooltip {
-      pointer-events: none;
-    }
-
-    .count-wrapper {
-      display: flex;
-      gap: 15px;
-    }
-
-    .card {
-      border: 1px solid #f5f5f5;
-      padding: 15px;
-      color: #fff;
-      border-radius: 5px;
-      flex: 1;
-    }
-
-    .generated-on {
-      margin-right: 10px;
-    }
-
-    .card h4 {
-      font-size: 15px;
-    }
-
-    .red-box {
-      background: #d9534e;
-    }
-
-    .blue-box {
-      background: #0074ff;
-    }
-
-    .yellow-box {
-      background: #f0ad4e;
-    }
-
-    .saffron-box {
-      background: #ff9933;
-    }
-
-    .green-box {
-      background: #5cb85b;
-    }
-
-    .gray-box {
-      background: #999;
-    }
-
-    .amb-box {
-      background: #218bcf;
-    }
-
-    .undefined-box {
-      background: #22c2e2;
-    }
-
-    .mb-20px {
-      margin-bottom: 20px;
-    }
-  </style>
-  <meta charset="UTF-8">
-</head>
-
-<body>
-
-  <div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
         
-          <a class="navbar-brand">
-            Cucumberjs Report
-          </a>
-          <div class="project-name visible-md visible-lg">
-            cucumber-pom-project
-          </div>
+          <a class="navbar-brand">1BT Frontend Automation</a>
+          <div class="project-name visible-md visible-lg">1BT Frontend Automation Test Report</div>
           <div class="label-container">
-            <div class="generated-on">
-              Mon Sep 15 2025 16:46:59 GMT+0530 (India Standard Time)
-            </div>
+            <span class="label label-success" title="scenarios Passed: 4">Passed: 4</span>
+            <span class="label label-danger" title="scenarios Failed: 0">Failed: 0</span>
           </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="count-wrapper mb-20px">
-      <div class="card blue-box">
-        <div class="feature-title">
-          <h4>All Scenarios</h2>
-        </div>
-        <div class="feature-value">
-          <h5>
-            1
-          </h5>
-        </div>
+      <div class="generated-on">Thu Sep 18 2025 10:35:48 GMT+0530 (India Standard Time)</div>
+
+      <div class="row">
+        <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
+        <div class="chart col-lg-6 col-md-6" id="piechart_scenarios"></div>
       </div>
-      <div class="card green-box">
-        <div class="feature-title">
-          <h4>Passed Scenarios</h2>
-        </div>
-        <div class="feature-value">
-          <h5>
-            1
-          </h5>
-        </div>
-      </div>
-      <div class="card red-box">
-        <div class="feature-title">
-          <h4>Failed Scenarios</h2>
-        </div>
-        <div class="feature-value">
-          <h5>
-            0
-          </h5>
-        </div>
-      </div>
+
       
-          
-              
-                  
-                      
-    </div>
-    <div class="row">
-      <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
-      <div class="chart col-lg-6 col-md-6" id="piechart_scenarios"></div>
-    </div>
-
-    <div>
-      <p class="text-left">
-        Execution Time: 3s 193ms
-      </p>
-      <p class="text-right">
-        <a id="expand_all">Expand All</a>
-        <span> | </span>
-        <a id="collapse_all">Collapse All</a>
-      </p>
-    </div>
-
-    
       <div class="panel panel-default">
-        <div class="panel-heading open">
+        <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" href="#logOutput">
+            <a data-toggle="collapse" href="#metadataInfo">
               <i class="glyphicon glyphicon-chevron-right"></i>
               <i class="glyphicon glyphicon-chevron-down"></i>
               <b>Metadata</b>
             </a>
           </h4>
         </div>
-        <div id="logOutput" class="panel-collapse collapse in">
+        <div id="metadataInfo" class="panel-collapse collapse">
           <div class="panel-body">
             <div class="row">
               
-                
-                  
-                    
-                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class=pull-left>
-                          <strong>
-                            App Version:
-                          </strong>
-                          1.0.0
-                        </div>
-                      </div>
-                      
-                  
-                    
-                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class=pull-right-lg>
-                          <strong>
-                            Test Environment:
-                          </strong>
-                          QA
-                        </div>
-                      </div>
-                      
-                  
-                    
-                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class=pull-left>
-                          <strong>
-                            Browser:
-                          </strong>
-                          Chrome
-                        </div>
-                      </div>
-                      
-                  
-                    
-                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class=pull-right-lg>
-                          <strong>
-                            Platform:
-                          </strong>
-                          Windows
-                        </div>
-                      </div>
-                      
-                  
-                    
-                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class=pull-left>
-                          <strong>
-                            Parallel:
-                          </strong>
-                          Scenarios
-                        </div>
-                      </div>
-                      
-                  
-                    
-                      <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div class=pull-right-lg>
-                          <strong>
-                            Executed:
-                          </strong>
-                          Remote
-                        </div>
-                      </div>
-                      
+             
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-left>
+                    <strong> Project: </strong>1BT Frontend Automation
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-right-lg>
+                    <strong> Team: </strong>QA Automation Team
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-left>
+                    <strong> App Version: </strong>1.0.0
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-right-lg>
+                    <strong> Test Environment: </strong>QA
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-left>
+                    <strong> Browser: </strong>Chrome (Headless: false)
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-right-lg>
+                    <strong> Platform: </strong>Windows 11
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-left>
+                    <strong> Test Suite: </strong>Login & Authentication Tests
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-right-lg>
+                    <strong> Framework: </strong>Cucumber BDD + Playwright + POM
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-left>
+                    <strong> Execution Mode: </strong>Automated
+                  </div>
+              </div>
+              
+              
+              
+              <div class="clearfix metadata col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class=pull-right-lg>
+                    <strong> Report Generated: </strong>9/18/2025, 10:35:48 AM
+                  </div>
+              </div>
+              
             </div>
           </div>
         </div>
       </div>
       
 
-        
+        <div class="all-features">
+            
 
 
 <div class="row" xmlns="http://www.w3.org/1999/html">
@@ -559,7 +422,7 @@ pre {
 
 <div class="feature-passed">
 
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-12 col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -567,18 +430,13 @@ pre {
                     <div class="tags">
                     </div>
                     
-                    <a data-toggle="collapse" href="#collapseFeaturecucumber_pom_project2132a382-cab1-4dcd-9388-81891cf97869">
+                    <a data-toggle="collapse" href="#collapseFeature1____rontend__utomation__est__eport1238b16a-19be-48d2-8295-a7d53f6ff6a0">
                         <i class="glyphicon glyphicon-chevron-right"></i>
                         <i class="glyphicon glyphicon-chevron-down"></i>
-                        <b>Feature:</b>Login Functionality for Sauce Demo
+                        <b>Feature:</b>Sauce Demo Login
                         <span class="label-container">
-
-                        
-
-                        <span>3s 193ms</span>
-                                
               <span class="label label-success"
-                                                         title="1 Scenarios Passed">1</span>
+                                                         title="3 Scenarios Passed">3</span>
               
               
               
@@ -588,8 +446,10 @@ pre {
                     </a>
                 </h4>
             </div>
-            <div id="collapseFeaturecucumber_pom_project2132a382-cab1-4dcd-9388-81891cf97869" class="panel-collapse collapse">
+            <div id="collapseFeature1____rontend__utomation__est__eport1238b16a-19be-48d2-8295-a7d53f6ff6a0" class="panel-collapse collapse">
                 <div class="panel-body">
+                    
+                    <div class="description">  As a user of the Sauce Demo application<br/>  I want to be able to login with valid credentials<br/>  So that I can access the product inventory</div>
                     
                     
                     
@@ -601,20 +461,19 @@ pre {
                                 <div class="tags">
                                 </div>
                                 
-                                <a data-toggle="collapse" href="#collapseScenariocucumber_pom_project8616b5bd-9d52-451f-b9ce-efd936c89357">
+                                <a data-toggle="collapse" href="#collapseScenario1____rontend__utomation__est__eportdea9a2f3-46fa-4756-9cba-abd5e1f19c43">
                                     <div>
 
                                         <div style="padding-right: 30px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
-                                            <b>Scenario Outline:</b><div class="ellipsis" data-text="Login with different credentials">Login with different credentials</div>
+                                            <b>Scenario:</b>Successful login with valid credentials
                                         </div>
                                         <div>
                             <span class="label-container ">
-                                <span>3s 193ms</span>
                               
                               <span class="label label-success"
-                                                               title="8 Steps Passed">8</span>
+                                                               title="6 Steps Passed">6</span>
                               
                               
                               
@@ -627,7 +486,7 @@ pre {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseScenariocucumber_pom_project8616b5bd-9d52-451f-b9ce-efd936c89357"
+                        <div id="collapseScenario1____rontend__utomation__est__eportdea9a2f3-46fa-4756-9cba-abd5e1f19c43"
                              class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div></div>
@@ -646,11 +505,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Given </span>
-                          <span class="stepname"> I navigate to Sauce Demo website</span>
+                          <span> I navigate to the Sauce Demo login page</span>
                             
                           
                               <span class="step-duration">
-                               1s 463ms
+                               1s 621ms
                               </span>
                             
                          
@@ -684,11 +543,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span class="stepname"> I enter username from test data &quot;validUser&quot;</span>
+                          <span> I enter username &quot;standard_user&quot;</span>
                             
                           
                               <span class="step-duration">
-                               50ms
+                               55ms
                               </span>
                             
                          
@@ -722,11 +581,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span class="stepname"> I enter password from test data &quot;validUser&quot;</span>
+                          <span> I enter password &quot;secret_sauce&quot;</span>
                             
                           
                               <span class="step-duration">
-                               19ms
+                               21ms
                               </span>
                             
                          
@@ -760,11 +619,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span class="stepname"> I click on the login button</span>
+                          <span> I click the login button</span>
                             
                           
                               <span class="step-duration">
-                               456ms
+                               88ms
                               </span>
                             
                          
@@ -798,11 +657,135 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span class="stepname"> I should see the expected result for &quot;validUser&quot;</span>
+                          <span> I should be redirected to the inventory page</span>
                             
                           
                               <span class="step-duration">
-                               26ms
+                               10ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I should see the products page title</span>
+                            
+                          
+                              <span class="step-duration">
+                               8ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                
+                                <div class="tags">
+                                </div>
+                                
+                                <a data-toggle="collapse" href="#collapseScenario1____rontend__utomation__est__eporte19287cf-4749-45ea-9b4d-caf4c31566f9">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Failed login with invalid credentials
+                                        </div>
+                                        <div>
+                            <span class="label-container ">
+                              
+                              <span class="label label-success"
+                                                               title="5 Steps Passed">5</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                    <div><small><i></i></small></div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenario1____rontend__utomation__est__eporte19287cf-4749-45ea-9b4d-caf4c31566f9"
+                             class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div></div>
+                                
+                                
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I navigate to the Sauce Demo login page</span>
+                            
+                          
+                              <span class="step-duration">
+                               1s 916ms
                               </span>
                             
                          
@@ -836,11 +819,11 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">When </span>
-                          <span class="stepname"> I click on burger menu</span>
+                          <span> I enter username &quot;invalid_user&quot;</span>
                             
                           
                               <span class="step-duration">
-                               166ms
+                               45ms
                               </span>
                             
                          
@@ -874,11 +857,49 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span class="stepname"> I click on logout link</span>
+                          <span> I enter password &quot;wrong_password&quot;</span>
                             
                           
                               <span class="step-duration">
-                               989ms
+                               14ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I click the login button</span>
+                            
+                          
+                              <span class="step-duration">
+                               70ms
                               </span>
                             
                          
@@ -912,11 +933,985 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">Then </span>
-                          <span class="stepname"> I should be logged out successfully</span>
+                          <span> I should see an error message &quot;Epic sadface: Username and password do not match any user in this service&quot;</span>
                             
                           
                               <span class="step-duration">
-                               22ms
+                               6ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                
+                                <div class="tags">
+                                </div>
+                                
+                                <a data-toggle="collapse" href="#collapseScenario1____rontend__utomation__est__eport85fa62ae-e3bf-4996-bfde-fac846b54e2e">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Failed login with locked user
+                                        </div>
+                                        <div>
+                            <span class="label-container ">
+                              
+                              <span class="label label-success"
+                                                               title="5 Steps Passed">5</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                    <div><small><i></i></small></div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenario1____rontend__utomation__est__eport85fa62ae-e3bf-4996-bfde-fac846b54e2e"
+                             class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div></div>
+                                
+                                
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I navigate to the Sauce Demo login page</span>
+                            
+                          
+                              <span class="step-duration">
+                               1s 589ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span> I enter username &quot;locked_out_user&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               46ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I enter password &quot;secret_sauce&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               18ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I click the login button</span>
+                            
+                          
+                              <span class="step-duration">
+                               65ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> I should see an error message &quot;Epic sadface: Sorry, this user has been locked out.&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               4ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+<div class="feature-passed">
+
+    <div class="col-lg-12 col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    
+                    <div class="tags">
+                    </div>
+                    
+                    <a data-toggle="collapse" href="#collapseFeature1____rontend__utomation__est__eportf7363fab-0b5c-42f4-922d-b4c8e064a8c8">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Sauce Demo Add Single Product
+                        <span class="label-container">
+              <span class="label label-success"
+                                                         title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+                        </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeature1____rontend__utomation__est__eportf7363fab-0b5c-42f4-922d-b4c8e064a8c8" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    <div class="description">  As a user of the Sauce Demo application<br/>  I want to be able to add a single product to my cart<br/>  So that I can purchase items from the inventory</div>
+                    
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                
+                                <div class="tags">
+                                </div>
+                                
+                                <a data-toggle="collapse" href="#collapseScenario1____rontend__utomation__est__eport8fcc5eec-df4e-44e8-8fa6-af42758f2ca1">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Add single product to cart and complete checkout
+                                        </div>
+                                        <div>
+                            <span class="label-container ">
+                              
+                              <span class="label label-success"
+                                                               title="17 Steps Passed">17</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                    <div><small><i></i></small></div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenario1____rontend__utomation__est__eport8fcc5eec-df4e-44e8-8fa6-af42758f2ca1"
+                             class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div></div>
+                                
+                                
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I navigate to the Sauce Demo login page</span>
+                            
+                          
+                              <span class="step-duration">
+                               1s 76ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I login with valid credentials</span>
+                            
+                          
+                              <span class="step-duration">
+                               159ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span> I add &quot;Sauce Labs Backpack&quot; to cart</span>
+                            
+                          
+                              <span class="step-duration">
+                               572ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> the product should be added to cart</span>
+                            
+                          
+                              <span class="step-duration">
+                               7ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the cart badge should show &quot;1&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               6ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span> I click on the cart icon</span>
+                            
+                          
+                              <span class="step-duration">
+                               41ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> I should be on the cart page</span>
+                            
+                          
+                              <span class="step-duration">
+                               9ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the cart should contain &quot;Sauce Labs Backpack&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               12ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span> I click the checkout button</span>
+                            
+                          
+                              <span class="step-duration">
+                               37ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> I should be on the checkout page</span>
+                            
+                          
+                              <span class="step-duration">
+                               13ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span> I enter checkout information</span>
+                            
+                          
+                              <span class="step-duration">
+                               46ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I click continue</span>
+                            
+                          
+                              <span class="step-duration">
+                               63ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> I should be on the checkout overview page</span>
+                            
+                          
+                              <span class="step-duration">
+                               10ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the order should contain &quot;Sauce Labs Backpack&quot;</span>
+                            
+                          
+                              <span class="step-duration">
+                               9ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">When </span>
+                          <span> I click finish</span>
+                            
+                          
+                              <span class="step-duration">
+                               38ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> I should be on the checkout complete page</span>
+                            
+                          
+                              <span class="step-duration">
+                               10ms
+                              </span>
+                            
+                         
+                            
+                          
+                          <!-- Adding data table data-->
+                          
+                      </span>
+                                
+                                
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                </div>
+                                </p>
+                                
+                                
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i
+                                            class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I should see the order confirmation message</span>
+                            
+                          
+                              <span class="step-duration">
+                               3ms
                               </span>
                             
                          
@@ -955,47 +1950,50 @@ pre {
 </div>
 
 
+            
+    </div>
 
-          
-  </div>
+    </div>
+    <div class="navbar-fixed-bottom row-fluid footer-div ">
+      <div class="navbar-inner">
+        <div class="footer-container">
+          <a  target="_blank" href="https://www.npmjs.com/package/cucumber-html-reporter">
+            <div class="text-muted footer-link">
+              generated by @cucumber-html-reporter
+            </div>
+             </a>
+        </div>
+      </div>
+    </div>
 
-
-
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    google.load("visualization", "1", { packages: ["corechart"] });
-    google.setOnLoadCallback(function () {
-      drawChart({
-        "title": "Features",
-        "failed": 0,
-        "passed": 1,
-        "notdefined": 0,
-        "pending": 0,
-        "skipped": 0,
-        "ambiguous": 0
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages: ["corechart"]});
+        google.setOnLoadCallback(function() {drawChart({
+                                                            "title" : "Features",
+                                                            "failed" : 0,
+                                                            "passed" : 2,
+                                                            "notdefined" : 0,
+                                                            "pending" : 0,
+                                                            "skipped" : 0,
+                                                            "ambiguous" : 0
                                                         })
-    });
-    google.setOnLoadCallback(function () {
-      drawChart({
-        "title": "Scenarios",
-        "failed": 0,
-        "passed": 1,
-        "rerun": 0,
-        "notdefined": 0,
-        "pending": 0,
-        "skipped": 0,
-        "ambiguous": 0
+                                            });
+        google.setOnLoadCallback(function() {drawChart({
+                                                            "title" : "Scenarios",
+                                                            "failed" : 0,
+                                                            "passed" : 4,
+                                                            "notdefined" : 0,
+                                                            "pending" : 0,
+                                                            "skipped" : 0,
+                                                            "ambiguous" : 0
                                                         })
-    });
-  </script>
-  <script>
+                                            });
+    </script>
+    <script>
       $(document).ready(function () {
   $('.collapse')
     .on('hide.bs.collapse', function (e) {
@@ -1012,28 +2010,6 @@ pre {
   let timestamp = $generated.text();
   $generated.text('Report generated ' + moment(timestamp).fromNow());
   $generated.prop('title', new Date(timestamp).toISOString());
-});
-
-$(document).ready(function () {
-  const $collapsibleItems = $('[data-toggle="collapse"]');
-  const $collapseAllBtn = $('#collapse_all');
-  const $expandAllBtn = $('#expand_all');
-
-  const collapseAll = function () {
-    $collapsibleItems.each(function () {
-      $($(this).attr('href')).collapse('hide');
-    });
-  };
-
-  const expandAll = function () {
-    $collapsibleItems.each(function () {
-      $($(this).attr('href')).collapse('show');
-    });
-  };
-
-  $collapseAllBtn.on('click', collapseAll);
-  $expandAllBtn.on('click', expandAll);
-
 });
 
 function toggle(className) {
@@ -1122,7 +2098,6 @@ function toggle(className) {
   }
 });
 
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
