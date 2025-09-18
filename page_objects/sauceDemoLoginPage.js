@@ -1,4 +1,5 @@
 const BasePage = require('./basePage');
+const ConfigUtil = require('../utils/ConfigUtil');
 
 class SauceDemoLoginPage extends BasePage {
   constructor(page) {
@@ -9,10 +10,12 @@ class SauceDemoLoginPage extends BasePage {
       loginButton: '[data-test="login-button"]',
       errorMessage: '[data-test="error"]'
     };
-    this.url = 'https://www.saucedemo.com/';
+    // Use base URL from Playwright configuration
+    this.url = ConfigUtil.getBaseUrl();
   }
 
   async navigate() {
+    // Use the base URL from Playwright configuration
     await super.navigate(this.url);
   }
 

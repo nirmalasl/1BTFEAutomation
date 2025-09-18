@@ -1,4 +1,5 @@
 const Logger = require('../utils/Logger');
+const ConfigUtil = require('../utils/ConfigUtil');
 
 class BasePage {
     constructor(page) {
@@ -21,6 +22,23 @@ class BasePage {
             Logger.pageError('navigate', '', error, url);
             throw error;
         }
+    }
+
+    /**
+     * Navigate to a path relative to the base URL
+     * @param {string} path - Path to navigate to (e.g., '/inventory.html')
+     */
+    async navigateToPath(path = '') {
+        const fullUrl = ConfigUtil.getUrl(path);
+        await this.navigate(fullUrl);
+    }
+
+    /**
+     * Navigate to the base URL
+     */
+    async navigateToBase() {
+        const baseUrl = ConfigUtil.getBaseUrl();
+        await this.navigate(baseUrl);
     }
 
     async fill(selector, value) {
