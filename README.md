@@ -1,10 +1,40 @@
 # 1BT Playwright BDD Automation Framework
 
->This project is a modern test automation framework using **Cucumber** (BDD) and **Playwright** with the **Page Object Model (POM)** in JavaScript. It enables scalable, maintainable, and readable frontend test automation for web applications.
+>This project is a modern **AI-driven** test automation framework using **Cucumber** (BDD) and **Playwright** with the **Page Object Model (POM)** in JavaScript. It leverages AI tools like **GitHub Copilot**, **Claude Sonnet**, and **Playwright MCP** to automatically generate test artifacts from manual test cases, enabling scalable, maintainable, and readable frontend test automation.
 
 ---
 
-## 🏗️ Architecture Diagram
+## 🤖 AI-Driven Architecture Overview
+
+This framework uses AI tools to automatically generate test automation code from manual test cases:
+
+- **📝 Input**: Manual test cases and business requirements
+- **🤖 AI Generation**: GitHub Copilot, Claude Sonnet, and Playwright MCP create test artifacts
+- **📊 Output**: HTML reports, comprehensive logs, and screenshots
+
+### Architecture Diagram
+
+![AI Framework Architecture](docs/AI_Framework_Architecture.drawio)
+
+*For a detailed view, open the [architecture diagram](docs/AI_Framework_Architecture.drawio) in draw.io or diagrams.net*
+
+#### AI Tools Integration:
+
+- **🤖 GitHub Copilot**: Generates step definitions, page object methods, and test logic
+- **🧠 Claude Sonnet**: Creates feature files, Gherkin scenarios, and BDD structure  
+- **🎭 Playwright MCP**: Generates page objects, element selectors, and UI interactions
+
+#### Generated Test Assets:
+
+- **🥒 Feature Files**: Gherkin scenarios with Given-When-Then structure
+- **📝 Step Definitions**: JavaScript implementations of Cucumber steps
+- **🏗️ Page Objects**: UI interaction classes with element locators
+
+---
+
+## 🏗️ Traditional Framework Architecture
+
+*Note: This diagram shows the traditional framework structure. See above for the AI-driven architecture.*
 
 ```mermaid
 graph TB
@@ -29,7 +59,7 @@ graph TB
     end
 
     subgraph "Target"
-        App[Sauce Demo<br/>Web Application]
+        App[Web Application Under Test]
     end
 
     %% Flow
