@@ -12,10 +12,6 @@ This framework uses AI tools to automatically generate test automation code from
 - **🤖 AI Generation**: GitHub Copilot, Claude Sonnet, and Playwright MCP create test artifacts
 - **📊 Output**: HTML reports, comprehensive logs, and screenshots
 
-### Architecture Diagram
-
-
-
 #### AI Tools Integration:
 
 - **🤖 GitHub Copilot**: Generates step definitions, page object methods, and test logic
