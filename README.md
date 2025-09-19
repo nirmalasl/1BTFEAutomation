@@ -14,9 +14,7 @@ This framework uses AI tools to automatically generate test automation code from
 
 ### Architecture Diagram
 
-![AI Framework Architecture](docs/AI_Framework_Architecture.drawio)
 
-*For a detailed view, open the [architecture diagram](docs/AI_Framework_Architecture.drawio) in draw.io or diagrams.net*
 
 #### AI Tools Integration:
 
@@ -30,62 +28,6 @@ This framework uses AI tools to automatically generate test automation code from
 - **📝 Step Definitions**: JavaScript implementations of Cucumber steps
 - **🏗️ Page Objects**: UI interaction classes with element locators
 
----
-
-## 🏗️ Traditional Framework Architecture
-
-*Note: This diagram shows the traditional framework structure. See above for the AI-driven architecture.*
-
-```mermaid
-graph TB
-    subgraph "Test Layer"
-        Tests[Feature Files<br/>Login & Checkout Tests]
-        Steps[Step Definitions<br/>Test Implementation]
-    end
-
-    subgraph "Page Objects"
-        Pages[Page Object Classes<br/>Login, Cart, Checkout Pages]
-    end
-
-    subgraph "Framework"
-        Cucumber[Cucumber.js<br/>BDD Runner]
-        Playwright[Playwright<br/>Browser Automation]
-        Config[Configuration<br/>Test Data & Settings]
-    end
-
-    subgraph "Output"
-        Reports[HTML Reports<br/>Test Results]
-        Logs[Logs & Screenshots<br/>Debug Information]
-    end
-
-    subgraph "Target"
-        App[Web Application Under Test]
-    end
-
-    %% Flow
-    Tests --> Steps
-    Steps --> Pages
-    Pages --> Playwright
-    Cucumber --> Tests
-    Config --> Steps
-    Config --> Pages
-    Playwright --> App
-    Steps --> Reports
-    Steps --> Logs
-
-    %% Styling
-    classDef test fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    classDef framework fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef output fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-    classDef target fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-
-    class Tests,Steps test
-    class Pages,Cucumber,Playwright,Config framework
-    class Reports,Logs output
-    class App target
-```
-
----
 ## 📦 Project Structure
 
 - `features/` — Cucumber feature files and step definitions
@@ -136,25 +78,8 @@ The framework includes comprehensive documentation in the `docs/` directory:
 	 ```
 2. **Run all tests:**
 	 ```bash
-	 npx cucumber-js
-	 ```
-3. **Run specific feature tests:**
-	 ```bash
-	 # Login tests only
-	 npx cucumber-js features/sauceDemoLogin.feature
-	 
-	 # Product addition tests only
-	 npx cucumber-js features/sauceDemoAddProduct.feature
-	 
-	 # Run specific scenario
-	 npx cucumber-js --name="Add single product to cart and complete checkout"
-	 ```
-4. **Generate HTML report:**
-	 ```bash
-	 npm run test:report
-	 # View the report at reports/cucumber-report.html
-	 ```
-
+	 npm test
+	
 ## 🧩 Key Patterns & Conventions
 
 - **Page Objects:**
