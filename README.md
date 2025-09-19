@@ -90,10 +90,10 @@ graph TB
 
 - `features/` — Cucumber feature files and step definitions
 	- `sauceDemoLogin.feature` — Authentication testing scenarios
-	- `sauceDemoCheckout.feature` — E-commerce checkout testing scenarios
+	- `sauceDemoAddProduct.feature` — Product addition and cart testing scenarios
 	- `step_definitions/` — Step implementations (JavaScript)
-		- `sauceDemoSteps.js` — Login and authentication steps
-		- `sauceDemoCheckoutSteps.js` — Checkout and cart management steps
+		- `sauceDemoLoginSteps.js` — Login and authentication steps
+		- `sauceDemoAddProductSteps.js` — Product addition and cart management steps
 	- `support/` — Hooks and custom world logic
 - `page_objects/` — Page Object Model classes for UI abstraction
 	- `basePage.js` — Base page with common functionality
@@ -110,7 +110,23 @@ graph TB
 - `logs/` — Application and test execution logs (auto-rotating)
 - `utils/` — Utility classes and helpers (Logger, etc.)
 - `docs/` — Documentation and guides
+	- `ESLint_Integration_Guide.md` — ESLint setup and configuration guide
+	- `Multi-Browser_Testing_Guide.md` — Cross-browser testing documentation
+	- `Logging_Guide.md` — Comprehensive logging system guide
+	- `Framework_Standards_Compliance_Report.md` — Code quality and standards report
+	- `Simple_Architecture_Diagram.md` — Framework architecture overview
+	- `AI_Framework_Architecture.drawio` — Visual architecture diagram
 - `package.json` — Project dependencies and scripts
+
+## 📚 Documentation
+
+The framework includes comprehensive documentation in the `docs/` directory:
+
+- **[ESLint Integration Guide](docs/ESLint_Integration_Guide.md)** — Complete guide for code quality setup
+- **[Multi-Browser Testing Guide](docs/Multi-Browser_Testing_Guide.md)** — Cross-browser testing strategies
+- **[Logging Guide](docs/Logging_Guide.md)** — Detailed logging system usage and configuration
+- **[Framework Standards Report](docs/Framework_Standards_Compliance_Report.md)** — Quality metrics and compliance
+- **[Architecture Overview](docs/Simple_Architecture_Diagram.md)** — Framework structure and design patterns
 
 ## 🚀 Getting Started
 
@@ -127,11 +143,11 @@ graph TB
 	 # Login tests only
 	 npx cucumber-js features/sauceDemoLogin.feature
 	 
-	 # Checkout tests only
-	 npx cucumber-js features/sauceDemoCheckout.feature
+	 # Product addition tests only
+	 npx cucumber-js features/sauceDemoAddProduct.feature
 	 
 	 # Run specific scenario
-	 npx cucumber-js --name="Complete full checkout process"
+	 npx cucumber-js --name="Add single product to cart and complete checkout"
 	 ```
 4. **Generate HTML report:**
 	 ```bash
@@ -174,11 +190,27 @@ graph TB
 
 - `npm install` — Install dependencies
 - `npx cucumber-js` — Run all tests
+- `npm test` — Run all tests with HTML report generation
 - `npm run test:report` — Run tests and generate HTML report
 - `npm run test:login` — Run login feature tests only
 - `npm run test:checkout` — Run checkout feature tests only
+- `npm run test:parallel` — Run tests in parallel (4 workers)
+- `npm run test:chrome` — Run tests in Chrome browser
+- `npm run test:firefox` — Run tests in Firefox browser
+- `npm run test:safari` — Run tests in Safari/WebKit browser
+- `npm run test:edge` — Run tests in Edge browser
+- `npm run test:all-browsers` — Run tests sequentially in all browsers
+- `npm run test:all-browsers-parallel` — Run tests in all browsers in parallel
+- `npm run test:headless` — Run tests in headless mode
+- `npm run test:chrome-headless` — Run tests in Chrome headless mode
+- `npm run report` — Generate HTML report from existing JSON results
 - `npm run view-report` — Open the latest HTML report
+- `npm run view-playwright-report` — Open Playwright test report
 - `npm run clean-screenshots` — Clean screenshot directory
+- `npm run clean-reports` — Clean Playwright report directories
+- `npm run lint` — Run ESLint code analysis
+- `npm run lint:fix` — Run ESLint and auto-fix issues
+- `npm run lint:check` — Run ESLint with zero warnings tolerance
 
 ## 🧪 Test Features
 
@@ -189,25 +221,24 @@ This framework includes comprehensive test coverage for the Sauce Demo applicati
 - **Failed login** scenarios (invalid credentials, locked users)
 - **Error message validation** for authentication failures
 
-### 🛒 E-commerce Checkout Testing (`sauceDemoCheckout.feature`)
-- **Cart Management:**
-  - Add single/multiple products to cart
-  - Remove products from cart
+### 🛒 E-commerce Product Testing (`sauceDemoAddProduct.feature`)
+- **Product Addition:**
+  - Add single product to cart from inventory page
   - Cart badge validation and visibility
-  - View cart details and navigate between pages
-- **Checkout Process:**
-  - Complete end-to-end checkout workflow
+  - Product verification in cart
+- **Complete Checkout Process:**
+  - End-to-end checkout workflow from cart to completion
   - Checkout information validation (required fields)
-  - Order review and confirmation
-  - Success page validation
+  - Order review and confirmation on overview page
+  - Success page validation with confirmation message
 - **Navigation Flow:**
-  - Continue shopping from cart
-  - Cancel checkout at different stages
+  - Seamless navigation between inventory → cart → checkout → completion
+  - Multi-step form validation and progression
 - **Data-Driven Testing:**
-  - Scenario outlines for testing multiple product types
-  - Comprehensive product catalog coverage
+  - Configurable product selection from test data
+  - Comprehensive product catalog integration
 
-**Total Coverage:** 19+ scenarios, 112+ test steps
+**Total Coverage:** Complete e-commerce workflow from login to order completion
 
 ## 📊 Features
 
@@ -225,12 +256,24 @@ This framework includes comprehensive test coverage for the Sauce Demo applicati
 - **Screenshot capture** on test failures
 - **Custom reporting** with configurable options
 
+### ✅ Code Quality & Standards
+- **ESLint 9.x integration** with flat config format
+- **Cucumber-specific linting rules** for step definitions and feature files
+- **Playwright-specific linting rules** for browser automation code
+- **Automated code formatting** and style enforcement
+- **Zero-warnings policy** option for strict quality control
+- **Pre-commit hooks** capability for continuous quality assurance
+
 ### ✅ Robust Test Architecture
 - **Page Object Model** for maintainable UI interactions
 - **BDD approach** with Cucumber and Gherkin syntax
 - **Data-driven testing** with JSON test data
 - **Cross-browser testing** capability with Playwright
 - **Hooks and fixtures** for setup/teardown operations
+- **ESLint integration** for code quality and consistency
+- **Multi-browser support** (Chrome, Firefox, Safari/WebKit, Edge)
+- **Parallel test execution** for faster feedback
+- **Headless and headed modes** for different testing scenarios
 
 ## 🤝 Contributing
 
@@ -238,14 +281,24 @@ Pull requests and issues are welcome! Please follow project conventions and keep
 
 ## 📝 Recent Updates
 
+### v1.2.0 - September 2025
+- ✅ **ESLint Integration** with modern flat config format (ESLint 9.x)
+- ✅ **Multi-Browser Testing Support** (Chrome, Firefox, Safari/WebKit, Edge)
+- ✅ **Parallel Test Execution** for improved performance
+- ✅ **Enhanced npm Scripts** for comprehensive testing workflows
+- ✅ **Code Quality Standards** with automated linting and formatting
+- ✅ **Comprehensive Documentation** including ESLint and multi-browser guides
+- ✅ **Headless/Headed Mode Support** for flexible testing environments
+- ✅ **Advanced Reporting** with Playwright and Cucumber HTML reports
+- ✅ **Cross-Platform Compatibility** with Windows PowerShell support
+
 ### v1.1.0 - September 2025
-- ✅ **Added comprehensive checkout testing** with `sauceDemoCheckout.feature`
-- ✅ **16 new test scenarios** covering complete e-commerce workflow
-- ✅ **4 new page objects** for cart, checkout, and order management
-- ✅ **Enhanced inventory page** with cart functionality
+- ✅ **Added comprehensive product testing** with `sauceDemoAddProduct.feature`
+- ✅ **Complete e-commerce workflow** from login to order completion
+- ✅ **Enhanced page objects** for cart, checkout, and order management
 - ✅ **Updated test data** with product catalog and checkout information
-- ✅ **Added npm script** for running checkout tests independently (`npm run test:checkout`)
-- ✅ **Expanded documentation** with detailed feature coverage
+- ✅ **Improved logging system** with Winston and daily rotation
+- ✅ **Structured test architecture** with better maintainability
 
 ---
 
