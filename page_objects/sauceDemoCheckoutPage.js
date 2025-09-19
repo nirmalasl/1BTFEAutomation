@@ -12,7 +12,7 @@ class SauceDemoCheckoutPage extends BasePage {
    */
   constructor(page) {
     super(page);
-    
+
     // Page element selectors
     this.selectors = {
       firstNameInput: '#first-name',

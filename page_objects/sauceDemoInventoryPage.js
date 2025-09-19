@@ -12,7 +12,7 @@ class SauceDemoInventoryPage extends BasePage {
    */
   constructor(page) {
     super(page);
-    
+
     // Page element selectors
     this.selectors = {
       pageTitle: '.title',
@@ -24,7 +24,7 @@ class SauceDemoInventoryPage extends BasePage {
       cartIcon: '.shopping_cart_link',
       cartBadge: '.shopping_cart_badge'
     };
-    
+
     // Constants
     this.BUTTON_STATE_CHANGE_DELAY = 500; // ms
   }
@@ -52,13 +52,13 @@ class SauceDemoInventoryPage extends BasePage {
    */
   async addProductToCart(productName) {
     const inventoryItems = await this.page.locator(this.selectors.inventoryItem).all();
-    
+
     for (const item of inventoryItems) {
       const name = await item.locator(this.selectors.inventoryItemName).textContent();
-      
+
       if (name?.trim() === productName) {
         const addButton = item.locator(this.selectors.addToCartButton);
-        
+
         if (await addButton.isVisible()) {
           await addButton.click();
           await this.page.waitForTimeout(this.BUTTON_STATE_CHANGE_DELAY);
@@ -66,7 +66,7 @@ class SauceDemoInventoryPage extends BasePage {
         }
       }
     }
-    
+
     throw new Error(`Product "${productName}" not found or already in cart`);
   }
 
@@ -78,13 +78,13 @@ class SauceDemoInventoryPage extends BasePage {
    */
   async removeProductFromCart(productName) {
     const inventoryItems = await this.page.locator(this.selectors.inventoryItem).all();
-    
+
     for (const item of inventoryItems) {
       const name = await item.locator(this.selectors.inventoryItemName).textContent();
-      
+
       if (name?.trim() === productName) {
         const removeButton = item.locator(this.selectors.removeButton);
-        
+
         if (await removeButton.isVisible()) {
           await removeButton.click();
           await this.page.waitForTimeout(this.BUTTON_STATE_CHANGE_DELAY);
@@ -92,7 +92,7 @@ class SauceDemoInventoryPage extends BasePage {
         }
       }
     }
-    
+
     throw new Error(`Product "${productName}" not found in cart or not removable`);
   }
 
@@ -103,16 +103,16 @@ class SauceDemoInventoryPage extends BasePage {
    */
   async isProductInCart(productName) {
     const inventoryItems = await this.page.locator(this.selectors.inventoryItem).all();
-    
+
     for (const item of inventoryItems) {
       const name = await item.locator(this.selectors.inventoryItemName).textContent();
-      
+
       if (name?.trim() === productName) {
         const removeButton = item.locator(this.selectors.removeButton);
         return await removeButton.isVisible();
       }
     }
-    
+
     return false;
   }
 
@@ -123,11 +123,11 @@ class SauceDemoInventoryPage extends BasePage {
   async getCartBadgeCount() {
     try {
       const badge = await this.page.locator(this.selectors.cartBadge);
-      
+
       if (await badge.isVisible()) {
         return await badge.textContent();
       }
-      
+
       return null;
     } catch (error) {
       return null;
@@ -160,14 +160,14 @@ class SauceDemoInventoryPage extends BasePage {
   async getAllProducts() {
     const products = [];
     const inventoryItems = await this.page.locator(this.selectors.inventoryItem).all();
-    
+
     for (const item of inventoryItems) {
       const name = await item.locator(this.selectors.inventoryItemName).textContent();
       if (name?.trim()) {
         products.push(name.trim());
       }
     }
-    
+
     return products;
   }
 }

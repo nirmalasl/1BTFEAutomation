@@ -12,7 +12,7 @@ class SauceDemoCheckoutCompletePage extends BasePage {
    */
   constructor(page) {
     super(page);
-    
+
     // Page element selectors
     this.selectors = {
       backHomeButton: '#back-to-products',

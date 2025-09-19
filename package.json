@@ -20,7 +20,10 @@
     "view-report": "start reports/cucumber-report.html",
     "view-playwright-report": "npx playwright show-report reports/playwright-report",
     "clean-screenshots": "powershell -Command \"Remove-Item 'reports/screenshots/*' -Force -ErrorAction SilentlyContinue\"",
-    "clean-reports": "powershell -Command \"Remove-Item 'reports/playwright-report/*' -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item 'reports/test-results/*' -Recurse -Force -ErrorAction SilentlyContinue\""
+    "clean-reports": "powershell -Command \"Remove-Item 'reports/playwright-report/*' -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item 'reports/test-results/*' -Recurse -Force -ErrorAction SilentlyContinue\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:check": "eslint . --max-warnings 0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^9.6.0",
@@ -30,7 +33,11 @@
     "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.35.0",
     "cross-env": "^7.0.3",
-    "cucumber-html-reporter": "^6.0.0"
+    "cucumber-html-reporter": "^6.0.0",
+    "eslint": "^9.35.0",
+    "eslint-plugin-cucumber": "^2.0.0",
+    "eslint-plugin-playwright": "^2.2.2"
   }
 }

@@ -12,7 +12,7 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
    */
   constructor(page) {
     super(page);
-    
+
     // Page element selectors
     this.selectors = {
       finishButton: '#finish',
@@ -59,19 +59,19 @@ class SauceDemoCheckoutOverviewPage extends BasePage {
   async getOrderItems() {
     const items = [];
     const cartItems = await this.page.locator(this.selectors.cartItem).all();
-    
+
     for (const item of cartItems) {
       const name = await item.locator(this.selectors.cartItemName).textContent();
       const price = await item.locator(this.selectors.cartItemPrice).textContent();
       const quantity = await item.locator(this.selectors.cartQuantity).textContent();
-      
+
       items.push({
         name: name?.trim(),
         price: price?.trim(),
         quantity: quantity?.trim()
       });
     }
-    
+
     return items;
   }
 
