@@ -1,6 +1,7 @@
 # Test Reports
 /reports
 
+
 # Log files
 /logs
 *.log
@@ -14,7 +15,6 @@ node_modules/
 .env.*.local
 
 # IDE files
-.vscode/
 .idea/
 *.swp
 *.swo

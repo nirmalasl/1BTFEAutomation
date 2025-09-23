@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "ms-playwright.playwright",
+    "alexkrechik.cucumberautocomplete",
+    "cucumber.cucumber-official",
+    "ms-vscode.vscode-json",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "github.copilot",
+    "github.copilot-chat"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript-next"
+  ]
+}
