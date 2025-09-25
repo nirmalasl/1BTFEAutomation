@@ -1,4 +1,4 @@
-# Simple Prompt for 1BT Test Automation Framework
+# Sample Prompt for 1BT Test Automation Framework
 
 ## Framework Context
 This is a Cucumber-based test automation framework using:
