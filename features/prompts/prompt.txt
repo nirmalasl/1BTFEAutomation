@@ -1,0 +1,45 @@
+# Simple Prompt for 1BT Test Automation Framework
+
+## Framework Context
+This is a Cucumber-based test automation framework using:
+- **BDD (Behavior-Driven Development)** with Gherkin syntax
+- **Page Object Model (POM)** for UI abstraction
+- **Playwright** for browser automation
+- **JavaScript/Node.js** runtime
+- **Multi-browser testing** support (Chromium, Firefox, WebKit)
+
+## Key Folders
+```
+features/           # Test scenarios (.feature files)
+page_objects/       # UI interaction classes
+test_data/          # Test data (testData.json)
+step_definitions/   # Test step implementations
+```
+
+### For Adding New Test Scenarios
+**Prompt Example:**
+```
+Please create
+
+1. A .feature file with Gherkin scenarios
+2. Corresponding step definitions
+3. Page object class if needed
+4. Includes proper test data management
+5. Handles both positive and negative test cases
+
+
+### For Page Object Creation
+**Prompt Example:**
+```
+Create a new page object class for [page name] following the existing framework patterns:
+
+Requirements:
+- Extend the basePage.js class
+- Use async/await for all methods
+- Include proper element selectors
+- Add methods for all UI interactions
+- Follow the naming conventions used in existing page objects
+- Include proper error handling and logging
+
+Reference the existing page objects like sauceDemoLoginPage.js for structure and patterns.
+```
